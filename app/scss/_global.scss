@@ -4,13 +4,54 @@ html{
 
 *,
 *::after,
-&::before{
+*::before{
   box-sizing: inherit;
 }
 
 body{
+  font-family: 'Montserrat', sans-serif;
   min-width: 320px;
   margin: 0 auto;
-  background-color: #000000;
   padding: 0;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, li{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.btn{
+  border-radius: 6px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+.white-btn{
+  background: #FFFFFF;
+  color: $main_color;
+}
+.btn-big{
+  height: 52px;
 }

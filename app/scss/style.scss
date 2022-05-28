@@ -5,7 +5,37 @@
 @import "normalize";
 
 
+.header-container{
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
 
+.header{
+  position: fixed;
+  width: 100%;
+  background-color: $main_color;
+  min-height: 70px;
+  color: #FFFFFF;
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 70px;
+  }
+  &__menu-list{
+    display: flex;
+  }
+  &__list-item{
+    margin-left: 24px;
+    &:first-child{
+      margin-left: 0;
+    }
+  }
+  &__btn{
+    padding: 11px 7px;
+  }
+}
 
 
 @import "media";
