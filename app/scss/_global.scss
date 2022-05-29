@@ -55,6 +55,10 @@ h6{
   background: #FFFFFF;
   color: $main_color;
 }
+.dark-btn{
+  background-color: $main_color;
+  color: #FFFFFF;
+}
 .btn-big{
   height: 52px;
 }
@@ -62,4 +66,24 @@ h6{
   max-width: 1230px;
   margin: 0 auto;
   padding: 0 15px;
+}
+.container--mini{
+  max-width: 830px;
+}
+.page-section{
+  padding: 100px 0;
+}
+.line{
+  padding-top: 40px;
+  position: relative;
+  &::before{
+    position: absolute;
+    content: '';
+    width: 42px;
+    height: 8px;
+    background-color: #E08631;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }

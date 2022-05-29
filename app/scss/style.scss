@@ -88,6 +88,28 @@
     border: none;
   }
 }
+.about{
+  background-color: $bg_color;
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item{
+    max-width: 380px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  &__item-text{
+    &--2{
+      margin-bottom: 21px;
+    }
+  }
+  &__item-button{
+    padding: 11px 18px;
+  }
+}
 
 
 @import "media";
