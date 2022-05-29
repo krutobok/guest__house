@@ -13,6 +13,9 @@ body{
   min-width: 320px;
   margin: 0 auto;
   padding: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 a{
@@ -54,4 +57,9 @@ h6{
 }
 .btn-big{
   height: 52px;
+}
+.container{
+  max-width: 1230px;
+  margin: 0 auto;
+  padding: 0 15px;
 }
