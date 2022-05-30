@@ -44,7 +44,7 @@
 .first-screen{
   min-height: 100vh;
   color: #FFFFFF;
-  background-image: url('../images/first-screen-bg.png');
+  background-image: url('../images/first-screen-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   &__inner{
@@ -139,6 +139,46 @@
     padding-top: 18px;
     text-transform: uppercase;
     margin-bottom: 12px;
+  }
+}
+.resting{
+  background-color: $bg_color;
+  &__top{
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  &__title{
+    margin-bottom: 12px;
+  }
+  &__text{
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  &__items{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__item{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 347px;
+    width: 100%;
+    text-align: center;
+  }
+  &__item-img{
+    display: block;
+    margin-bottom: 12px;
+    width: 64px;
+    height: 64px;
+  }
+  &__item-title{
+    font-size: 16px;
+    line-height: 24px;
+  }
+  &__item-text{
+    padding: 0 10px;
   }
 }
 
