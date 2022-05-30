@@ -128,6 +128,9 @@
   position: relative;
 }
 .image__item{
+  background-color: rgba(#fff, 0.5);
+  padding: 20px;
+  border-radius: 5px;
   color: $text_color;
   position: absolute;
   width: 300px;
