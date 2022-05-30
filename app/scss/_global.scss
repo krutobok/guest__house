@@ -37,6 +37,8 @@ h5,
 h6{
   margin: 0;
   padding: 0;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 
@@ -70,6 +72,9 @@ h6{
 .container--mini{
   max-width: 830px;
 }
+.container--max{
+  max-width: 1290px;
+}
 .page-section{
   padding: 100px 0;
 }
@@ -86,4 +91,15 @@ h6{
     left: 50%;
     transform: translateX(-50%);
   }
+}
+.line-left{
+  &::before{
+    left: 0;
+    transform: translateX(0);
+  }
+}
+.title{
+  font-size: 32px;
+  line-height: 36px;
+  color: $main_color;
 }

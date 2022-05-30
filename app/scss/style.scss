@@ -110,6 +110,37 @@
     padding: 11px 18px;
   }
 }
+.title-section{
+  background-color: #fff;
+  padding-bottom: 140px;
+  &__title{
+    color: $main_color;
+    font-weight: 700;
+    font-size: 96px;
+    line-height: 100%;
+    text-align: center;
+  }
+}
+.image-section{
+  max-height: 800px;
+  min-height: 600px;
+  background-size: cover;
+  position: relative;
+}
+.image__item{
+  color: $text_color;
+  position: absolute;
+  width: 300px;
+  right: 180px;
+  top: 50%;
+  transform: translateY(-50%);
+  &-title{
+    letter-spacing: 2px;
+    padding-top: 18px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+}
 
 
 @import "media";
