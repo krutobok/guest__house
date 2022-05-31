@@ -211,6 +211,30 @@
   &__copy{
     margin-bottom: 20px;
   }
+  &__nav-title{
+    margin-bottom: 11px;
+  }
+  &__nav-item{
+    margin-bottom: 12px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  &__social-title{
+    margin-bottom: 20px;
+  }
+  &__social-list{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__form-title{
+    margin-bottom: 1px;
+  }
+  &__form-input{
+    &::placeholder{
+      color: $main_color;
+    }
+  }
 }
 
 @import "media";
