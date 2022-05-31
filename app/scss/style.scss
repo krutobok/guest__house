@@ -184,6 +184,33 @@
     padding: 0 10px;
   }
 }
-
+.footer{
+  color: #FFFFFF;
+  background-color: $main_color;
+  &__title{
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  &__top{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 48px;
+  }
+  &__logo{
+    width: 200px;
+    height: 70px;
+    margin: 0 auto 20px;
+  }
+  &__logo-img{
+    width: 200px;
+    height: 70px;
+  }
+  &__bottom{
+    text-align: center;
+  }
+  &__copy{
+    margin-bottom: 20px;
+  }
+}
 
 @import "media";
