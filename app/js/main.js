@@ -31,7 +31,8 @@ function rate() {
 }
 function slider(sliderContent) {
     const slider = document.querySelector('.' + sliderContent)
-    // const width = document.
+    const items = document.querySelectorAll('.slider__item')
+    const width = parseInt(window.getComputedStyle(items[0]).getPropertyValue('flex-basis').substr(0,3))
 }
 
 slider('slider__content')
