@@ -31,32 +31,43 @@ function rate() {
 }
 function slider(sliderContent) {
     const slider = document.querySelector('.' + sliderContent)
-    const items = document.querySelectorAll('.slider__item')
+    slider.style.transition = 'left .5s'
+    let items = document.querySelectorAll('.slider__item')
+    // const itemsTemp = items
     const width = parseInt(window.getComputedStyle(items[0]).getPropertyValue('flex-basis').substring(0,3))
     const margin = parseInt(window.getComputedStyle(items[0]).getPropertyValue('margin-right').substring(0,2))
     let height = parseInt(window.getComputedStyle(slider).getPropertyValue('height').substring(0,3));
         + parseInt(window.getComputedStyle(slider).getPropertyValue('padding-bottom').substring(0,2))
+    height = height+5
+    slider.style.left = -width-margin + 'px'
     const parent = slider.closest('.slider__content-inner')
     const btnRight = document.querySelector('.slider__btn-right')
-//     items.forEach(item => {
-//         const itemHeight = parseInt(window.getComputedStyle(item).getPropertyValue('height').substr(0,3))
-//             + parseInt(window.getComputedStyle(item).getPropertyValue('padding-top').substr(0,2))
-//             + parseInt(window.getComputedStyle(item).getPropertyValue('padding-bottom').substr(0,2))
-//         console.log(itemHeight)
-//         if (height < itemHeight){
-//             height = itemHeight
-//         }
-//     })
+    const btnLeft = document.querySelector('.slider__btn-left')
+    let currentSlide = 1
     parent.style.width = (items.length * width + (items.length-1)*margin) + 'px'
     parent.style.height = height + 'px'
-    console.log(btnRight)
-    let sliderPos = window.getComputedStyle(slider).getPropertyValue('left')
-    sliderPos = parseInt(sliderPos.substring(0, sliderPos.length - 2))
-    console.log( sliderPos)
+    let sliderPos = -width-margin
+    // let sliderPos = window.getComputedStyle(slider).getPropertyValue('left')
+    // sliderPos = parseInt(sliderPos.substring(0, sliderPos.length - 2))
     btnRight.addEventListener('click', ()=> {
         sliderPos = sliderPos - width - margin
         slider.style.left = sliderPos + 'px'
+        currentSlide++
+    })
+    btnLeft.addEventListener('click', ()=> {
+        sliderPos = sliderPos + width + margin
+        slider.style.left = sliderPos + 'px'
+        currentSlide--
+        if (currentSlide === -1){
+            currentSlide = items.length - 1
+        }
 
+        console.log(currentSlide)
+        console.log(items)
+        items[currentSlide].style.order = '2'
+        if (currentSlide === 0){
+
+        }
     })
 }
 
