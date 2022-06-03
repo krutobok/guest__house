@@ -409,10 +409,28 @@
   &__content{
     display: flex;
     align-items: flex-start;
+    position: absolute;
   }
   &__content-inner{
     overflow-x: hidden;
     width: 100%;
+    position: relative;
+    height: 400px;
+    margin-bottom: 20px;
+    left: 0;
+  }
+  &__btn-box{
+    display: flex;
+    margin-left: auto;
+    width: 130px;
+    justify-content: space-between;
+  }
+  &__btn{
+    border: 2px solid #52503B;
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    cursor: pointer;
   }
 }
 .slider__item{
