@@ -31,7 +31,8 @@ function rate() {
 }
 function slider(sliderContent) {
     const slider = document.querySelector('.' + sliderContent)
-    slider.style.transition = 'left .5s'
+    const sliderInner = document.querySelector('.slider__wrapper')
+    sliderInner.style.transition = 'left .5s'
     let items = document.querySelectorAll('.slider__item')
     // const itemsTemp = items
     const width = parseInt(window.getComputedStyle(items[0]).getPropertyValue('flex-basis').substring(0,3))
@@ -39,35 +40,42 @@ function slider(sliderContent) {
     let height = parseInt(window.getComputedStyle(slider).getPropertyValue('height').substring(0,3));
         + parseInt(window.getComputedStyle(slider).getPropertyValue('padding-bottom').substring(0,2))
     height = height+5
-    slider.style.left = -width-margin + 'px'
+    sliderInner.style.left = -width-margin + 'px'
     const parent = slider.closest('.slider__content-inner')
     const btnRight = document.querySelector('.slider__btn-right')
     const btnLeft = document.querySelector('.slider__btn-left')
-    let currentSlide = 1
+    let slideCounter = 1
     parent.style.width = (items.length * width + (items.length-1)*margin) + 'px'
     parent.style.height = height + 'px'
     let sliderPos = -width-margin
+    let currentSlide = 1
     // let sliderPos = window.getComputedStyle(slider).getPropertyValue('left')
     // sliderPos = parseInt(sliderPos.substring(0, sliderPos.length - 2))
+    function move() {
+        if(slideCounter === -1){
+            slideCounter = slideCounter + items.length
+        }
+        currentSlide = slideCounter % items.length
+
+        setTimeout(()=> {
+            slider.style.left = -sliderPos - width - margin + 'px'
+            items[currentSlide].style.order = '2'
+            items[(currentSlide+3)%items.length].style.order = '1'
+            items[(currentSlide+2)%items.length].style.order = '4'
+            items[(currentSlide+1)%items.length].style.order = '3'
+        }, 502)
+    }
     btnRight.addEventListener('click', ()=> {
         sliderPos = sliderPos - width - margin
-        slider.style.left = sliderPos + 'px'
-        currentSlide++
+        sliderInner.style.left = sliderPos + 'px'
+        slideCounter++
+        move()
     })
     btnLeft.addEventListener('click', ()=> {
         sliderPos = sliderPos + width + margin
-        slider.style.left = sliderPos + 'px'
-        currentSlide--
-        if (currentSlide === -1){
-            currentSlide = items.length - 1
-        }
-
-        console.log(currentSlide)
-        console.log(items)
-        items[currentSlide].style.order = '2'
-        if (currentSlide === 0){
-
-        }
+        sliderInner.style.left = sliderPos + 'px'
+        slideCounter--
+        move()
     })
 }
 
