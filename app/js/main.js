@@ -70,18 +70,59 @@ function slider(sliderContent) {
             }
         }, 502)
     }
-    btnRight.addEventListener('click', ()=> {
+    function moveRight(){
         sliderPos = sliderPos - width - margin
         sliderInner.style.left = sliderPos + 'px'
         slideCounter++
         move()
-    })
-    btnLeft.addEventListener('click', ()=> {
+    }
+    function moveLeft(){
         sliderPos = sliderPos + width + margin
         sliderInner.style.left = sliderPos + 'px'
         slideCounter--
         move()
+    }
+    btnRight.addEventListener('click', ()=> {
+        moveRight()
     })
+    btnLeft.addEventListener('click', ()=> {
+        moveLeft()
+    })
+    let pos
+    parent.addEventListener('touchstart', function() {
+        pos = 0
+    })
+    parent.addEventListener('touchmove', function(e) {
+        let touchLocation = e.targetTouches[0];
+        if (pos === 0){
+            pos = touchLocation.pageX
+        }
+        let posEnd
+        console.log(pos)
+        parent.ontouchend = () => {
+            posEnd = touchLocation.pageX
+            console.log(posEnd)
+            if (pos > posEnd){
+                moveRight()
+            }
+            if (pos < posEnd){
+                moveLeft()
+            }
+        }
+    })
+    parent.onmousedown = e =>{
+        let pos = e.pageX
+        let posEnd
+        parent.onmouseup = (e) => {
+            posEnd = e.pageX
+            if (pos > posEnd){
+                moveRight()
+            }
+            if (pos < posEnd){
+                moveLeft()
+            }
+        }
+    }
 }
 
 rate()
