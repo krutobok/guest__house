@@ -63,6 +63,7 @@
     font-size: 48px;
     line-height: 53px;
     margin-bottom: 33px;
+    margin-top: 0;
   }
   &__subtitle{
     letter-spacing: 2px;
@@ -87,6 +88,13 @@
     margin: 0;
     border: none;
   }
+  &__img{
+    width: 60px;
+    height: 65px;
+  }
+}
+.menu__btn{
+  display: none;
 }
 .about{
   background-color: $bg_color;

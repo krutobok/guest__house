@@ -1,4 +1,12 @@
 const rates = document.querySelectorAll('.slider__item-rate')
+const menuBtn = document.querySelector('.menu__btn')
+const menuList = document.querySelector('.header__menu-list')
+const headerBtn = document.querySelector('.header__btn')
+
+menuBtn.addEventListener('click', ()=>{
+    menuList.classList.toggle('active')
+    headerBtn.classList.toggle('active')
+})
 
 
 function rate() {
@@ -34,7 +42,6 @@ function slider(sliderContent) {
     const sliderInner = document.querySelector('.slider__wrapper')
     sliderInner.style.transition = 'left .5s'
     let items = document.querySelectorAll('.slider__item')
-    // const itemsTemp = items
     const width = parseInt(window.getComputedStyle(items[0]).getPropertyValue('flex-basis').substring(0,3))
     const margin = parseInt(window.getComputedStyle(items[0]).getPropertyValue('margin-right').substring(0,2))
     let height = parseInt(window.getComputedStyle(slider).getPropertyValue('height').substring(0,3));
@@ -49,8 +56,6 @@ function slider(sliderContent) {
     parent.style.height = height + 'px'
     let sliderPos = -width-margin
     let currentSlide = 1
-    // let sliderPos = window.getComputedStyle(slider).getPropertyValue('left')
-    // sliderPos = parseInt(sliderPos.substring(0, sliderPos.length - 2))
     function move() {
         if(slideCounter === -1){
             slideCounter = slideCounter + items.length
@@ -59,10 +64,10 @@ function slider(sliderContent) {
 
         setTimeout(()=> {
             slider.style.left = -sliderPos - width - margin + 'px'
-            items[currentSlide].style.order = '2'
-            items[(currentSlide+3)%items.length].style.order = '1'
-            items[(currentSlide+2)%items.length].style.order = '4'
-            items[(currentSlide+1)%items.length].style.order = '3'
+            items[(currentSlide+items.length-1)%items.length].style.order = '1'
+            for (let i = items.length-1; i > 0; i--){
+                items[(currentSlide+i-1)%items.length].style.order = (i+2).toString()
+            }
         }, 502)
     }
     btnRight.addEventListener('click', ()=> {
@@ -80,6 +85,9 @@ function slider(sliderContent) {
 }
 
 rate()
+window.addEventListener('resize',  ()=> {
+    slider('slider__content')
+});
 
 document.addEventListener('DOMContentLoaded', () =>{
     slider('slider__content')
