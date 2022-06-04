@@ -124,6 +124,46 @@ function slider(sliderContent) {
         }
     }
 }
+const anchors = [].slice.call(document.querySelectorAll('a[href*="#"]')),
+    animationTime = 500,
+    framesCount = 120;
+
+anchors.forEach(function(item) {
+    item.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        let coordY = document.querySelector(item.getAttribute('href')).getBoundingClientRect().top + window.pageYOffset;
+        console.log('coordY:' + coordY)
+        let coordY2 = (coordY-window.pageYOffset)
+        console.log('coordY2: ' + coordY2)
+        let scroller = setInterval(function() {
+            let scrollBy = (Math.abs(coordY2) / framesCount);
+            console.log('scrollBy:' + scrollBy)
+            console.log('pageYOffset: ' + window.pageYOffset)
+            console.log('window.innerHeight: ' + window.innerHeight)
+            console.log('document.body.offsetHeight: ' + document.body.offsetHeight)
+            if (coordY2>0){
+                if(scrollBy > window.pageYOffset - coordY && window.innerHeight + window.pageYOffset < document.body.offsetHeight) {
+                    window.scrollBy(0, scrollBy);
+                } else {
+                    window.scrollTo(0, coordY);
+                    clearInterval(scroller);
+                }
+            }
+            else if (coordY2<0){
+                if(scrollBy < window.pageYOffset - coordY) {
+                    window.scrollBy(0, -scrollBy);
+                } else {
+                    window.scrollTo(0, coordY);
+                    clearInterval(scroller);
+                }
+            }
+            else if (coordY2){
+                clearInterval(scroller);
+            }
+        }, animationTime / framesCount);
+    });
+});
 
 rate()
 window.addEventListener('resize',  ()=> {
