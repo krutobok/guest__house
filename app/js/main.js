@@ -133,15 +133,10 @@ anchors.forEach(function(item) {
         e.preventDefault();
 
         let coordY = document.querySelector(item.getAttribute('href')).getBoundingClientRect().top + window.pageYOffset;
-        console.log('coordY:' + coordY)
         let coordY2 = (coordY-window.pageYOffset)
         console.log('coordY2: ' + coordY2)
         let scroller = setInterval(function() {
             let scrollBy = (Math.abs(coordY2) / framesCount);
-            console.log('scrollBy:' + scrollBy)
-            console.log('pageYOffset: ' + window.pageYOffset)
-            console.log('window.innerHeight: ' + window.innerHeight)
-            console.log('document.body.offsetHeight: ' + document.body.offsetHeight)
             if (coordY2>0){
                 if(scrollBy > window.pageYOffset - coordY && window.innerHeight + window.pageYOffset < document.body.offsetHeight) {
                     window.scrollBy(0, scrollBy);
@@ -164,6 +159,56 @@ anchors.forEach(function(item) {
         }, animationTime / framesCount);
     });
 });
+const modalsBtn = [].slice.call(document.querySelectorAll('button[data-modal="modal"]'))
+const modalWindow = document.querySelector('.modal')
+const form = document.querySelector('.modal__form')
+const modalBtnClose = document.querySelector('.btn__modal--close')
+const modalBtnSubmit = document.querySelector('.modal__btn')
+const modalTitle = document.querySelector('.modal__title')
+const input1 = document.querySelector('.modal__input--1')
+const input2 = document.querySelector('.modal__input--2')
+function modal(){
+    form.addEventListener('submit', onSubmit);
+    modalsBtn.forEach(btn => {
+        btn.addEventListener('click',  function modalOpen() {
+            modalWindow.classList.add('active')
+            if (btn.getAttribute('data-book') === 'true'){
+                modalTitle.textContent = 'Введіть дані для бронювання'
+                modalBtnSubmit.textContent = 'Забронювати'
+            }
+            else{
+                modalTitle.textContent = "Зв'яжемося з вами за 30 хвилин"
+                modalBtnSubmit.textContent = "Зв'язатися"
+            }
+        })
+    })
+    modalBtnClose.addEventListener('click', function () {
+        modalWindow.classList.remove('active')
+    })
+    input1.addEventListener('input', ()=> input1.style.borderColor = "#52503B")
+    input2.addEventListener('input', ()=> input2.style.borderColor = "#52503B")
+    function onSubmit(event) {
+        event.preventDefault();
+        const inputValue1 = input1.value
+        const inputValue2 = input2.value
+        if (inputValue1 !== '' && inputValue2 !== ''){
+            modalWindow.classList.remove('active')
+            input1.value = ''
+            input2.value = ''
+        }
+        else if (inputValue1 !== '' && inputValue2 === ''){
+            input2.style.borderColor = "red"
+        }
+        else if (inputValue1 === '' && inputValue2 !== ''){
+            input1.style.borderColor = "red"
+        }
+        else if (inputValue1 === '' && inputValue2 === ''){
+            input1.style.borderColor = "red"
+            input2.style.borderColor = "red"
+        }
+    }
+}
+modal()
 
 rate()
 window.addEventListener('resize',  ()=> {

@@ -28,7 +28,7 @@
                     <li class="header__list-item"><a href="#contact" class="header__list-item__link">Контакти</a></li>
                     <li class="header__list-item"><a href="#reviews" class="header__list-item__link">Відгуки</a></li>
                 </ul>
-                <a href="#" class="header__btn btn white-btn">Забронювати</a>
+                <button data-book="true" class="header__btn btn white-btn" data-modal="modal">Забронювати</button>
             </div>
         </div>
     </header>
@@ -41,7 +41,7 @@
                     </div>
                     <h1 class="first-screen__title">Відчуйте ідеальне поєднання сучасного житла та природних пейзажів.</h1>
                     <p class="first-screen__subtitle">РОзташований в Мукачево, Україна</p>
-                    <button class="first-screen__button">
+                    <button data-book="true" data-modal="modal" class="first-screen__button">
                         <img src="images/first-screen-icon.png" alt="icon" class="first-screen__img">
                     </button>
                 </div>
@@ -55,7 +55,7 @@
                     </div>
                     <div class="about__item">
                         <p class="about__item-text about__item-text--2">Нижче ви знайдете інформацію про житло та що входить у вартість. Не соромтеся звертатися до нас через сторінку контактів, якщо у вас виникнуть запитання щодо вашого перебування в нашому гостьовому будинку.</p>
-                        <a href="#" class="about__item-button btn dark-btn">Забронювати</a>
+                        <button data-book="true" data-modal="modal" class="about__item-button btn dark-btn">Забронювати</button>
                     </div>
                 </div>
             </div>
@@ -256,8 +256,8 @@
                     <h3 class="book__title title line">Ми вже заброньовані на весну — поспішайте та забезпечте собі перебування влітку.</h3>
                     <p class="book__text text">Поспішайте, використайте свій шанс для незабутьнього відпочинку</p>
                     <div class="book__btn-box">
-                        <a href="#" class="book__btn btn">Зв’язатися</a>
-                        <a href="#" class="book__btn btn">Забронювати</a>
+                        <button data-modal="modal" data-book="false" class="book__btn btn">Зв’язатися</button>
+                        <button data-modal="modal" data-book="true" class="book__btn btn">Забронювати</button>
                     </div>
                 </div>
             </div>
@@ -328,6 +328,26 @@
             </div>
         </div>
     </footer>
+
+    <div class="modal">
+        <div class="modal__inner">
+            <h3 class="modal__title title">Введіть дані для бронювання</h3>
+            <form class="modal__form">
+                <label class="modal__label text">
+                    Ваше ім'я
+                    <input type="text" class="modal__input modal__input--1">
+                </label>
+                <label class="modal__label modal__label--2 text">
+                    Ваш номер телефону
+                    <input type="tel" class="modal__input modal__input--2">
+                </label>
+                <button type="submit" class="modal__btn btn dark-btn">Забронювати</button>
+            </form>
+        </div>
+        <button class="btn__modal--close">
+            <img src="images/close.svg" alt="close">
+        </button>
+    </div>
 
 
     
