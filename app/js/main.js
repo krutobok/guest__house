@@ -184,6 +184,8 @@ function modal(){
     })
     modalBtnClose.addEventListener('click', function () {
         modalWindow.classList.remove('active')
+        input1.style.borderColor = "#52503B"
+        input2.style.borderColor = "#52503B"
     })
     input1.addEventListener('input', ()=> input1.style.borderColor = "#52503B")
     input2.addEventListener('input', ()=> input2.style.borderColor = "#52503B")
