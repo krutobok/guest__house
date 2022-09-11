@@ -1,7 +1,17 @@
+@media (max-width: 1920px) {
+  .slider {
+    padding-left: calc((100vw - 1230px)/2);
+  }
+}
 @media (max-width: 1280px) {
   .title-section__title {
     font-size: 84px;
   }
+}
+@media (max-width: 1230px) {
+   .slider{
+     padding-left: 15px;
+   }
 }
 @media (max-width: 1200px) {
   .escape__item {
@@ -212,9 +222,6 @@
       margin: 10px auto 25px;
     }
   }
-  .header__list-item__link {
-    //font-size: 12px;
-  }
   .btn {
     height: 32px;
     font-size: 14px;
@@ -326,7 +333,7 @@
     height: 40px;
     width: 40px;
   }
-  .slider__btn-box {
+  .slider__arrows {
     width: 90px;
   }
   .slider__item {
@@ -411,9 +418,13 @@
   .container{
     padding: 0 10px;
   }
-  .about{}
-  overflow-x: hidden;
+  .about{
+    overflow-x: hidden;
+  }
   .about__item{
     max-width: 280px;
+  }
+  .slider{
+    padding-left: 10px;
   }
 }

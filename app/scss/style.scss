@@ -44,7 +44,6 @@
 .first-screen{
   min-height: 100vh;
   color: #FFFFFF;
-  background-image: url('../images/first-screen-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   &__inner{
@@ -414,6 +413,9 @@
   }
 }
 .slider{
+  max-width: 1920px;
+  margin: 0 auto;
+  padding-left: 345px;
   &__content{
     display: flex;
     align-items: flex-start;
@@ -429,10 +431,10 @@
   &__wrapper{
     position: absolute;
   }
-  &__btn-box{
-    display: flex;
-    margin-left: auto;
+  &__arrows{
     width: 130px;
+    margin-left: auto;
+    display: flex;
     justify-content: space-between;
   }
   &__btn{
@@ -440,7 +442,9 @@
     border-radius: 50%;
     height: 60px;
     width: 60px;
+    background-color: transparent;
     cursor: pointer;
+    font-size: 0;
   }
 }
 .slider__item{
@@ -551,7 +555,10 @@
     height: 24px;
   }
 }
-
+.footer__social-list__img{
+  width: 32px;
+  height: 32px;
+}
 
 
 @import "media";
