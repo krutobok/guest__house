@@ -85,6 +85,12 @@ function slider(sliderContent) {
     const btnLeft = parentBlock.querySelector('[data-arrow="left"]')
     let animSlider
     let parentBlockWidth = window.getComputedStyle(parent).getPropertyValue('width')
+
+    let height = parseInt(window.getComputedStyle(slider).getPropertyValue('height').substring(0,3));
+    + parseInt(window.getComputedStyle(slider).getPropertyValue('padding-bottom').substring(0,2))
+    height = height+5
+    parent.style.height = height + 'px'
+
     parentBlockWidth = parseInt(parentBlockWidth.substring(0, parentBlockWidth.length-2))
     if (parentBlock.hasAttribute('data-anim')){
         if(parentBlock.getAttribute('data-anim') === 'true'){
@@ -337,6 +343,10 @@ function slider(sliderContent) {
         width = parseInt(width.substring(0, width.length-2))
         margin = window.getComputedStyle(items[0]).getPropertyValue('margin-right')
         margin = parseInt(margin.substring(0,margin.length-2))
+        height = parseInt(window.getComputedStyle(slider).getPropertyValue('height').substring(0,3));
+        + parseInt(window.getComputedStyle(slider).getPropertyValue('padding-bottom').substring(0,2))
+        height = height+5
+        parent.style.height = height + 'px'
         parentBlockWidth = window.getComputedStyle(parent).getPropertyValue('width')
         parentBlockWidth = parseInt(parentBlockWidth.substring(0, parentBlockWidth.length-2))
         sliderInner.style.transition = 'none'
