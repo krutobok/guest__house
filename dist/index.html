@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Гостьовий будинок 'Guest House' - це ідеальне житло для відпочинку на вихідних. Наш гостьовий дім розташований в місті Мукачево Закарпатьської області " >
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +17,10 @@
             <div class="header__inner">
                 <div class="header__logo-box">
                     <a href="#first-screen" class="header__logo-link">
-                        <img src="images/logo.png" alt="logo" class="header__logo">
+                        <picture>
+                            <source type="image/webp" srcset="images/logo.webp">
+                            <img src="images/logo.png" alt="логотип 'Guest House'" class="header__logo">
+                        </picture>
                     </a>
                 </div>
                 <div class="menu__btn">
@@ -28,21 +32,27 @@
                     <li class="header__list-item"><a href="#contact" class="header__list-item__link">Контакти</a></li>
                     <li class="header__list-item"><a href="#reviews" class="header__list-item__link">Відгуки</a></li>
                 </ul>
-                <button data-book="true" class="header__btn btn white-btn" data-modal="modal">Забронювати</button>
+                <button type="button" data-book="true" class="header__btn btn white-btn" data-modal="modal">Забронювати</button>
             </div>
         </div>
     </header>
     <main class="main">
-        <section id="first-screen" class="first-screen">
+        <section id="first-screen" class="first-screen" style="background-image: url('images/first-screen-bg.webp');" data-background="true">
             <div class="container">
                 <div class="first-screen__inner">
                     <div class="first-screen__logo-box">
-                        <img src="images/logo.png" alt="logo" class="first-screen__logo">
+                        <picture>
+                            <source type="image/webp" srcset="images/logo.webp">
+                            <img src="images/logo.png" alt="логотип 'Guest House'" class="first-screen__logo">
+                        </picture>
                     </div>
                     <h1 class="first-screen__title">Відчуйте ідеальне поєднання сучасного житла та природних пейзажів.</h1>
                     <p class="first-screen__subtitle">РОзташований в Мукачево, Україна</p>
-                    <button data-book="true" data-modal="modal" class="first-screen__button">
-                        <img src="images/first-screen-icon.png" alt="icon" class="first-screen__img">
+                    <button type="button" data-book="true" data-modal="modal" class="first-screen__button">
+                        <picture>
+                            <source type="image/webp" srcset="images/first-screen-icon.webp">
+                            <img src="images/first-screen-icon.png" alt="бронювання" class="first-screen__img">
+                        </picture>
                     </button>
                 </div>
             </div>
@@ -55,7 +65,7 @@
                     </div>
                     <div class="about__item">
                         <p class="about__item-text about__item-text--2">Нижче ви знайдете інформацію про житло та що входить у вартість. Не соромтеся звертатися до нас через сторінку контактів, якщо у вас виникнуть запитання щодо вашого перебування в нашому гостьовому будинку.</p>
-                        <button data-book="true" data-modal="modal" class="about__item-button btn dark-btn">Забронювати</button>
+                        <button type="button" data-book="true" data-modal="modal" class="about__item-button btn dark-btn">Забронювати</button>
                     </div>
                 </div>
             </div>
@@ -65,7 +75,7 @@
                 <h2 class="title-section__title line">Guest House - це ідеальне місце для відпочинку на вихідних</h2>
             </div>
         </section>
-        <section class="image-section" style="background-image: url('images/image-section--1.jpg');">
+        <section class="image-section" style="background-image: url('images/image-section--1.webp');" data-background="true">
             <div class="image__item">
                 <h6 class="image__item-title line line-left">
                     Кухня
@@ -82,17 +92,26 @@
                     </div>
                     <div class="resting__items">
                         <div class="resting__item">
-                            <img src="images/resting--1.png" alt="bed" class="resting__item-img">
+                            <picture>
+                                <source type="image/webp" srcset="images/resting--1.webp">
+                                <img src="images/resting--1.png" alt="ліжко" class="resting__item-img">
+                            </picture>
                             <h6 class="resting__item-title">Ліжка</h6>
                             <p class="resting__item-text">Котедж обладнаний 12 ліжками, 4 з яких двоярусні. У вартість оренди входить постільна білизна для всіх ліжок.</p>
                         </div>
                         <div class="resting__item">
-                            <img src="images/resting--2.png" alt="bed" class="resting__item-img">
+                            <picture>
+                                <source type="image/webp" srcset="images/resting--2.webp">
+                                <img src="images/resting--2.png" alt="двері" class="resting__item-img">
+                            </picture>
                             <h6 class="resting__item-title">Спальні</h6>
                             <p class="resting__item-text">Котедж на двох поверхах налічує 4 спальні. Від 2 до 4 ліжок в кімнаті.</p>
                         </div>
                         <div class="resting__item">
-                            <img src="images/resting--3.png" alt="bed" class="resting__item-img">
+                            <picture>
+                                <source type="image/webp" srcset="images/resting--3.webp">
+                                <img src="images/resting--3.png" alt="ванна" class="resting__item-img">
+                            </picture>
                             <h6 class="resting__item-title">Ванні кімнати</h6>
                             <p class="resting__item-text">У котеджі є три ванні кімнати, всі обладнані душовими кабінами та одна з ванною.</p>
                         </div>
@@ -109,56 +128,80 @@
                     </div>
                     <div class="escape__items">
                         <div class="escape__item">
-                            <img src="images/escape-1.png" alt="gas-cooker" class="escape__item-img">
+                            <picture>
+                                <source type="image/webp" srcset="images/escape-1.webp">
+                                <img src="images/escape-1.png" alt="газова плита" class="escape__item-img">
+                            </picture>
                             <div class="escape__item-content">
                                 <h6 class="escape__item-title">Сучасна кухонна техніка</h6>
                                 <p class="escape__item-text">Повністю обладнана сучасна кухня з чудовою технікою. </p>
                             </div>
                         </div>
                         <div class="escape__item">
-                            <img src="images/escape-2.png" alt="Air conditioner" class="escape__item-img">
+                            <picture>
+                                <source type="image/webp" srcset="images/escape-2.webp">
+                                <img src="images/escape-2.png" alt="кондиціонер" class="escape__item-img">
+                            </picture>
                             <div class="escape__item-content">
                                 <h6 class="escape__item-title">Кондиціонер</h6>
                                 <p class="escape__item-text">Кожна кімната в котеджі обладнана кондіціонером.</p>
                             </div>
                         </div>
                         <div class="escape__item">
-                            <img src="images/escape-3.png" alt="forest" class="escape__item-img">
+                            <picture>
+                                <source type="image/webp" srcset="images/escape-3.webp">
+                                <img src="images/escape-3.png" alt="ліс" class="escape__item-img">
+                            </picture>
                             <div class="escape__item-content">
                                 <h6 class="escape__item-title">Прогулянки лісом</h6>
                                 <p class="escape__item-text">Поряд з будинком є лісові стежки.</p>
                             </div>
                         </div>
                         <div class="escape__item">
-                            <img src="images/escape-4.png" alt="bag" class="escape__item-img">
+                            <picture>
+                                <source type="image/webp" srcset="images/escape-4.webp">
+                                <img src="images/escape-4.png" alt="валіза" class="escape__item-img">
+                            </picture>
                             <div class="escape__item-content">
                                 <h6 class="escape__item-title">Збереження речей</h6>
                                 <p class="escape__item-text">Guest House обладнано шафами та сейфом для комфортного та безпечного зберігання ваших речей.</p>
                             </div>
                         </div>
                         <div class="escape__item">
-                            <img src="images/escape-5.png" alt="Coffee maker" class="escape__item-img">
+                            <picture>
+                                <source type="image/webp" srcset="images/escape-5.webp">
+                                <img src="images/escape-5.png" alt="кавоварка" class="escape__item-img">
+                            </picture>
                             <div class="escape__item-content">
                                 <h6 class="escape__item-title">Кавоварка</h6>
                                 <p class="escape__item-text">У Guest House є чудова кавоварка з можливостю готувати різні види кави.</p>
                             </div>
                         </div>
                         <div class="escape__item">
-                            <img src="images/escape-6.png" alt="goblet" class="escape__item-img">
+                            <picture>
+                                <source type="image/webp" srcset="images/escape-6.webp">
+                                <img src="images/escape-6.png" alt="бокал" class="escape__item-img">
+                            </picture>
                             <div class="escape__item-content">
                                 <h6 class="escape__item-title">Посуд</h6>
                                 <p class="escape__item-text">У будинку є велика кількість якісного посуду.</p>
                             </div>
                         </div>
                         <div class="escape__item">
-                            <img src="images/escape-7.png" alt="Natural landscapes" class="escape__item-img">
+                            <picture>
+                                <source type="image/webp" srcset="images/escape-7.webp">
+                                <img src="images/escape-7.png" alt="пейзаж" class="escape__item-img">
+                            </picture>
                             <div class="escape__item-content">
                                 <h6 class="escape__item-title">Природні пейзажі</h6>
                                 <p class="escape__item-text">З вікон в Guest House відкриваються чудові пейзажі.</p>
                             </div>
                         </div>
                         <div class="escape__item">
-                            <img src="images/escape-8.png" alt="pizza" class="escape__item-img">
+                            <picture>
+                                <source type="image/webp" srcset="images/escape-8.webp">
+                                <img src="images/escape-8.png" alt="шматочок піци" class="escape__item-img">
+                            </picture>
                             <div class="escape__item-content">
                                 <h6 class="escape__item-title">Доставка їжі</h6>
                                 <p class="escape__item-text">Є можливість замовити доставку їжі, яку ми готуємо самостійно, неподалік від будинку.</p>
@@ -169,15 +212,17 @@
             </div>
         </section>
         <section id="reviews" class="slider-section">
-            <div class="container footer-container">
+
                 <div class="slider-section__inner">
-                    <div class="slider-section__top">
-                        <h3 class="slider-section__title title line">Минулі гості.</h3>
-                        <p class="slider-section__text text">Не вірте нам на слово! Подивіться, що кажуть наші попередні гості про своє перебування в Гостьовому домі.</p>
+                    <div class="container footer-container">
+                        <div class="slider-section__top">
+                            <h3 class="slider-section__title title line">Минулі гості.</h3>
+                            <p class="slider-section__text text">Не вірте нам на слово! Подивіться, що кажуть наші попередні гості про своє перебування в Гостьовому домі.</p>
+                        </div>
                     </div>
-                    <div class="slider">
-                        <div class="slider__content-inner">
-                            <div class="slider__wrapper">
+                    <div class="slider" data-slider="parent-block">
+                        <div class="slider__content-inner" data-slider="inner">
+                            <div class="slider__wrapper" data-slider="wrapper">
                                 <div class="slider__content">
                                     <div class="slider__item">
                                         <div class="slider__item-rate" data-rate="5"></div>
@@ -203,18 +248,31 @@
                                         <p class="slider__item-text">Ми з друзями чудово провели час у гостьовому домі "Guest House" біля озера.</p>
                                         <p class="slider__item-author">Степан Бандера</p>
                                     </div>
+                                    <div class="slider__item">
+                                        <div class="slider__item-rate" data-rate="5"></div>
+                                        <h6 class="slider__item-title">Найкращий відпочинок!</h6>
+                                        <p class="slider__item-text">Я з моєю сім'єю минулого віхідного круто провели час в цьому гостьовому домі в Мукачево</p>
+                                        <p class="slider__item-author">Іван Сидоров</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="slider__btn-box">
-                            <div class="slider__btn slider__btn-left"></div>
-                            <div class="slider__btn slider__btn-right"></div>
+                            <div class="container footer-container">
+                                <div class="slider__arrows">
+                                    <button type="button" data-arrow="left" class="slider__btn slider__btn-left">
+                                        стрілка вліво
+                                    </button>
+                                    <button type="button" data-arrow="right" class="slider__btn slider__btn-right">
+                                        стрілка вправа
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
             </div>
         </section>
-        <section class="image-section" style="background-image: url('images/image-section--2.jpg');">
+        <section class="image-section" style="background-image: url('images/image-section--2.webp');" data-background="true">
             <div class="image__item">
                 <h6 class="image__item-title line line-left">
                     Спальні
@@ -231,19 +289,31 @@
                     </div>
                     <div class="together__items">
                         <div class="together__item">
-                            <img src="images/together-1.png" alt="wifi" class="together__item-img">
+                            <picture>
+                                <source type="image/webp" srcset="images/together-1.webp">
+                                <img src="images/together-1.png" alt="wifi" class="together__item-img">
+                            </picture>
                             <p class="together__item-text">По всьому котеджу працює трьохчастотний wi-fi </p>
                         </div>
                         <div class="together__item">
-                            <img src="images/together-2.png" alt="bread" class="together__item-img">
+                            <picture>
+                                <source type="image/webp" srcset="images/together-2.webp">
+                                <img src="images/together-2.png" alt="хліб" class="together__item-img">
+                            </picture>
                             <p class="together__item-text">Всю їжу ми готуємо для вас самостійно.</p>
                         </div>
                         <div class="together__item">
-                            <img src="images/together-3.png" alt="hanger" class="together__item-img">
+                            <picture>
+                                <source type="image/webp" srcset="images/together-3.webp">
+                                <img src="images/together-3.png" alt="гачок" class="together__item-img">
+                            </picture>
                             <p class="together__item-text">Ми допоможемо вам занести ваші речі.</p>
                         </div>
                         <div class="together__item">
-                            <img src="images/together-4.png" alt="cutlery" class="together__item-img">
+                            <picture>
+                                <source type="image/webp" srcset="images/together-4.webp">
+                                <img src="images/together-4.png" alt="столові прибори" class="together__item-img">
+                            </picture>
                             <p class="together__item-text">У котеджі на вас чекає чотирьохразове харчування.</p>
                         </div>
                     </div>
@@ -256,8 +326,8 @@
                     <h3 class="book__title title line">Ми вже заброньовані на весну — поспішайте та забезпечте собі перебування влітку.</h3>
                     <p class="book__text text">Поспішайте, використайте свій шанс для незабутьнього відпочинку</p>
                     <div class="book__btn-box">
-                        <button data-modal="modal" data-book="false" class="book__btn btn">Зв’язатися</button>
-                        <button data-modal="modal" data-book="true" class="book__btn btn">Забронювати</button>
+                        <button type="button" data-modal="modal" data-book="false" class="book__btn btn">Зв’язатися</button>
+                        <button type="button" data-modal="modal" data-book="true" class="book__btn btn">Забронювати</button>
                     </div>
                 </div>
             </div>
@@ -283,7 +353,7 @@
                             <ul class="footer__social-list">
                                 <li class="footer__social-list__item">
                                     <a href="#" class="footer__social-list__link">
-                                        <img src="images/social-1.svg" alt="social" class="footer__social-list__img">
+                                        <img src="images/social-1.svg" alt="airbnb" class="footer__social-list__img">
                                     </a>
                                 </li>
                                 <li class="footer__social-list__item">
@@ -303,14 +373,18 @@
                         <h6 class="footer__title footer__form-title">Новини</h6>
                         <p class="footer__form-text">Радимо вам підписатися на наші, щоб не пропустити наших акцій та нових пропозицій</p>
                         <form class="footer__form">
-                            <input type="email" placeholder="email" class="footer__form-input">
+                            <label for="email" class="visually-hidden">email</label>
+                            <input id="email" type="email" placeholder="email" class="footer__form-input">
                             <button class="footer__form-btn dark-btn" type="submit">Підписатися</button>
                         </form>
                     </div>
                 </div>
                 <div class="footer__bottom">
                     <div class="footer__logo">
-                        <img src="images/logo.png" alt="logo" class="footer__logo-img">
+                        <picture>
+                            <source type="image/webp" srcset="images/logo.webp">
+                            <img src="images/logo.png" alt="логотип 'Guest House'" class="footer__logo-img">
+                        </picture>
                     </div>
                     <p class="footer__copy">© Guest House, LLC. Всі права захищені. Зроблено студією “Krutobok”</p>
                     <div class="footer__contact">
@@ -344,8 +418,8 @@
                 <button type="submit" class="modal__btn btn dark-btn">Забронювати</button>
             </form>
         </div>
-        <button class="btn__modal--close">
-            <img src="images/close.svg" alt="close">
+        <button type="button" class="btn__modal--close">
+            <img src="images/close.svg" alt="закрити">
         </button>
     </div>
 
